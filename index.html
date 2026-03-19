@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中国ロボット・AIハードウェア導入支援サービス</title>
+    <meta
+      name="description"
+      content="深セン現地ネットワークを活かし、調査・提携・視察・OEM/ODMまで一気通貫で支援する日本企業向けサービス"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+      }
+      .fade-in-on-scroll {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500/30">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
+            <div class="w-5 h-5 bg-white rounded-sm"></div>
+          </div>
+          <span class="font-bold text-xl tracking-tight">Project Hub <span class="text-cyan-400">Shenzhen</span></span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#why" class="hover:text-cyan-400 transition-colors">背景</a>
+          <a href="#services" class="hover:text-cyan-400 transition-colors">サービス内容</a>
+          <a href="#diff" class="hover:text-cyan-400 transition-colors">強み</a>
+          <a href="#contact" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-5 py-2 rounded-full transition-all">お問い合わせ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.1),transparent_50%)]"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6 animate-fade-in">
+            <span>深セン現地ネットワーク×日本品質</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">
+            中国ロボット・AIハードを、<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">事業の「核」に変える。</span>
+          </h1>
+          <p class="text-xl text-slate-400 mb-10 leading-relaxed">
+            深セン現地に根を張り、調査・提携・視察・OEM/ODMまでを一気通貫で支援。
+            日本企業の次世代ハードウェア実装を実現する実行パートナーです。
+          </p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#contact" class="flex items-center justify-center px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition-all transform hover:scale-105">
+              無料相談を予約する
+              <span class="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-slate-950 text-slate-100">→</span>
+            </a>
+            <a href="#services" class="flex items-center justify-center px-8 py-4 bg-slate-900 border border-slate-700 hover:border-slate-500 font-bold rounded-xl transition-all">
+              サービス詳細を見る
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 hidden lg:block opacity-20 pointer-events-none">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill="#0EA5E9"
+            d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,76.4,-44.7C83.7,-31.3,87.1,-15.6,85.6,-0.8C84.2,13.9,77.9,27.8,69.2,40.1C60.5,52.4,49.3,63.1,36.2,70.1C23.1,77.1,8.1,80.4,-6.8,78.8C-21.7,77.2,-36.5,70.7,-48.8,61.1C-61.1,51.5,-70.9,38.8,-76.3,24.4C-81.7,10,-82.7,-6.1,-78.9,-21.2C-75.1,-36.3,-66.5,-50.4,-54.3,-58C-42.1,-65.6,-26.3,-66.7,-11.4,-73.4C3.5,-80.1,44.7,-76.4,44.7,-76.4Z"
+            transform="translate(100 100)"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Market / Problem Section -->
+    <section id="why" class="py-24 bg-slate-900/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="fade-in-on-scroll" data-animate>
+            <h2 class="text-3xl font-bold mb-6">加速する中国ロボット市場。<br />今、連携のタイミングを逃さない。</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed">
+              ヒューマノイドロボット、サービスロボット、そしてAIを搭載した新しいハードウェア。
+              中国の実装スピードは日本の数倍です。
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                </div>
+                <span class="text-slate-300">ネット上の情報は断片的で、本物の実力が見えない</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                </div>
+                <span class="text-slate-300">核心的な経営層や工場責任者に直接繋がれない</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                </div>
+                <span class="text-slate-300">量産レベルの品質・工程管理に不安がある</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                </div>
+                <span class="text-slate-300">中国特有の商習慣や交渉スピードに対応しきれない</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative fade-in-on-scroll" data-animate>
+            <div class="aspect-square bg-gradient-to-br from-slate-800 to-slate-950 rounded-3xl border border-slate-700 p-8 flex flex-col justify-center">
+              <div class="text-center mb-8">
+                <div class="text-6xl font-bold text-cyan-400 mb-2">3.5<span class="text-2xl text-slate-500">倍</span></div>
+                <div class="text-sm text-slate-400 uppercase tracking-widest">実装スピードの差（当社推定）</div>
+              </div>
+              <div class="space-y-6">
+                <div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-cyan-500 w-full animate-pulse"></div>
+                </div>
+                <div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-slate-600 w-1/3"></div>
+                </div>
+              </div>
+              <p class="mt-8 text-center text-sm text-slate-500 italic">
+                「単なる仲介」ではなく「現地実行パートナー」が必要な理由がここにあります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">提供サービス内容</h2>
+          <p class="text-slate-400 max-w-2xl mx-auto">
+            調査・提携・視察・製造の4つの軸で、日本企業のハードウェア戦略を強力にバックアップします。
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition-all group fade-in-on-scroll" data-animate>
+            <div class="mb-6 p-3 bg-slate-950 rounded-xl inline-block group-hover:scale-110 transition-transform">
+              🔍
+            </div>
+            <h3 class="text-xl font-bold mb-3">中国ロボット企業リサーチ</h3>
+            <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+              特定分野の産業マップ作成、技術力・資本状況の調査、日本進出意欲の確認まで実施。
+            </p>
+            <div class="pt-4 border-t border-slate-800">
+              <span class="text-xs text-slate-500 uppercase tracking-wider block mb-2">実績例</span>
+              <p class="text-xs text-cyan-400/80 font-medium">大手家電メーカー様向けヒューマノイド産業構造分析など</p>
+            </div>
+          </div>
+          <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition-all group fade-in-on-scroll" data-animate>
+            <div class="mb-6 p-3 bg-slate-950 rounded-xl inline-block group-hover:scale-110 transition-transform">
+              🤝
+            </div>
+            <h3 class="text-xl font-bold mb-3">マッチング・提携支援</h3>
+            <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+              有力企業（UBTECH, ENGINE AI等）の経営層へのダイレクトアクセスと条件交渉を支援。
+            </p>
+            <div class="pt-4 border-t border-slate-800">
+              <span class="text-xs text-slate-500 uppercase tracking-wider block mb-2">実績例</span>
+              <p class="text-xs text-cyan-400/80 font-medium">深センロボット協会との連携を活かしたキーマン紹介</p>
+            </div>
+          </div>
+          <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition-all group fade-in-on-scroll" data-animate>
+            <div class="mb-6 p-3 bg-slate-950 rounded-xl inline-block group-hover:scale-110 transition-transform">
+              🧭
+            </div>
+            <h3 class="text-xl font-bold mb-3">ビジネス視察ツアー</h3>
+            <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+              観光ではない「意思決定」のための現場体験。アポ取得から通訳、同行までフルサポート。
+            </p>
+            <div class="pt-4 border-t border-slate-800">
+              <span class="text-xs text-slate-500 uppercase tracking-wider block mb-2">実績例</span>
+              <p class="text-xs text-cyan-400/80 font-medium">BYD, DJI, WeRide等の主要企業訪問実績</p>
+            </div>
+          </div>
+          <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-cyan-500/50 transition-all group fade-in-on-scroll" data-animate>
+            <div class="mb-6 p-3 bg-slate-950 rounded-xl inline-block group-hover:scale-110 transition-transform">
+              ⚙️
+            </div>
+            <h3 class="text-xl font-bold mb-3">AIハードウェア OEM/ODM</h3>
+            <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+              ロボット以外のAIデバイスも。設計から工場選定、量産・品質管理まで日本語で伴走。
+            </p>
+            <div class="pt-4 border-t border-slate-800">
+              <span class="text-xs text-slate-500 uppercase tracking-wider block mb-2">実績例</span>
+              <p class="text-xs text-cyan-400/80 font-medium">AIトイ、ウェアラブル、IoTデバイスの量産管理</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiation Section -->
+    <section id="diff" class="py-24 bg-slate-900/30">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden">
+          <div class="p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-8 text-center">なぜ、当社なのか？</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr class="border-b border-slate-800">
+                    <th class="py-4 px-4 text-slate-500 font-medium">比較項目</th>
+                    <th class="py-4 px-4 text-slate-500 font-medium">一般的なコンサル</th>
+                    <th class="py-4 px-4 text-cyan-400 font-bold">当社（Project Hub）</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800">
+                  <tr class="hover:bg-slate-800/30 transition-colors">
+                    <td class="py-6 px-4 font-medium text-slate-300">拠点の場所</td>
+                    <td class="py-6 px-4 text-slate-500">日本国内</td>
+                    <td class="py-6 px-4 text-cyan-400 font-bold">中国・深セン（常駐）</td>
+                  </tr>
+                  <tr class="hover:bg-slate-800/30 transition-colors">
+                    <td class="py-6 px-4 font-medium text-slate-300">専門性</td>
+                    <td class="py-6 px-4 text-slate-500">ビジネスモデル重視</td>
+                    <td class="py-6 px-4 text-cyan-400 font-bold">技術・ハードウェア構造理解</td>
+                  </tr>
+                  <tr class="hover:bg-slate-800/30 transition-colors">
+                    <td class="py-6 px-4 font-medium text-slate-300">対応スピード</td>
+                    <td class="py-6 px-4 text-slate-500">メール・月次報告</td>
+                    <td class="py-6 px-4 text-cyan-400 font-bold">WeChatによる即時連携</td>
+                  </tr>
+                  <tr class="hover:bg-slate-800/30 transition-colors">
+                    <td class="py-6 px-4 font-medium text-slate-300">支援範囲</td>
+                    <td class="py-6 px-4 text-slate-500">レポート提出まで</td>
+                    <td class="py-6 px-4 text-cyan-400 font-bold">現場視察・交渉・量産管理</td>
+                  </tr>
+                  <tr class="hover:bg-slate-800/30 transition-colors">
+                    <td class="py-6 px-4 font-medium text-slate-300">ネットワーク</td>
+                    <td class="py-6 px-4 text-slate-500">提携エージェント経由</td>
+                    <td class="py-6 px-4 text-cyan-400 font-bold">経営層・協会との直接接続</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Network / Logos -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-slate-500 uppercase tracking-[0.2em] text-sm mb-12 font-semibold">連携・訪問実績ネットワーク</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60">
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">UBTECH</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">ENGINE AI</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">PUDU</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">DOBOT</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">PAXINI</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">BYD</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">HUAWEI</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">DJI</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">Leju</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">WeRide</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">Tencent</div>
+          <div class="font-bold text-2xl text-slate-400 hover:text-white transition-colors cursor-default">Meituan</div>
+        </div>
+        <div class="mt-16 flex flex-wrap justify-center gap-4">
+          <div class="bg-slate-900 px-6 py-4 rounded-2xl border border-slate-800 flex items-center space-x-3">
+            <span class="text-cyan-400">👥</span>
+            <div class="text-left">
+              <div class="text-lg font-bold">40,000+</div>
+              <div class="text-xs text-slate-500">X(Twitter) Followers</div>
+            </div>
+          </div>
+          <div class="bg-slate-900 px-6 py-4 rounded-2xl border border-slate-800 flex items-center space-x-3">
+            <span class="text-cyan-400">🏆</span>
+            <div class="text-left">
+              <div class="text-lg font-bold">Media</div>
+              <div class="text-xs text-slate-500">TV/経済誌 出演実績多数</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery / Case Studies -->
+    <section class="py-24 bg-slate-900/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-2">ケース／制作・量産イメージ</h2>
+          <p class="text-slate-400 max-w-2xl mx-auto">製造現場やロボットの実機写真を並べ、導入イメージが湧きやすいレイアウトにしています。</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <img src="images/robot1.svg" alt="Factory robots" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">量産ラインでのロボット導入</h3>
+              <p class="text-sm text-slate-400 mt-2">実際の生産ラインで稼働する搬送・検査ロボットの事例。工程改善とコスト削減につながった導入例を紹介します。</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <img src="images/robot2.svg" alt="Collaborative robot" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">協働ロボットによる工程革新</h3>
+              <p class="text-sm text-slate-400 mt-2">人と協働するロボット導入のPoC事例。安全設計と現場運用のノウハウをもとに導入支援しました。</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <img src="images/robot3.svg" alt="Robot assembly" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">ロボットの組立・試作イメージ</h3>
+              <p class="text-sm text-slate-400 mt-2">設計からサンプル作成、試作ラインでの評価までサポートしたケース。品質検査の流れもご案内可能です。</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <img src="images/robot4.svg" alt="Service robot" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">サービスロボットの導入事例</h3>
+              <p class="text-sm text-slate-400 mt-2">接客・案内ロボットの導入支援。導入前後のKPIや業務フロー改善に関するレポートを作成しました。</p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <img src="images/robot5.svg" alt="AI hardware" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">AIハードウェアの量産管理</h3>
+              <p class="text-sm text-slate-400 mt-2">AIカメラやウェアラブルの設計から量産までを日本語で伴走。品質管理のポイントも共有します。</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <img src="images/robot6.svg" alt="Inspection robot" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">検査ロボットの導入</h3>
+              <p class="text-sm text-slate-400 mt-2">AIを用いた外観検査ロボットの事例。PoCから量産までの流れを支援しました。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Vision -->
+    <section class="py-24 bg-gradient-to-b from-slate-950 to-blue-900/20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6 italic">"中国の進化を、日本の力に。"</h2>
+        <p class="text-slate-400 leading-relaxed">
+          私たちは単なるコンサルタントではありません。将来的には自社でも中国のスピード感を活かしたロボット開発を行い、日本・グローバルへ展開する「次世代ハードウェア・プラットフォーム」を目指しています。
+          御社と共に、新しい産業の形を創りたいと考えています。
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="bg-white text-slate-950 rounded-3xl p-8 md:p-12 shadow-2xl shadow-cyan-500/20">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-4">お問い合わせ・ご相談</h2>
+            <p class="text-slate-600">深センの現場から、日本語で迅速に回答いたします。</p>
+          </div>
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-bold mb-2">会社名</label>
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  placeholder="株式会社〇〇"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-bold mb-2">お名前</label>
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  placeholder="深セン 太郎"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-bold mb-2">メールアドレス</label>
+              <input
+                type="email"
+                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="contact@example.com"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-bold mb-2">ご相談内容</label>
+              <textarea
+                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                placeholder="視察の相談、リサーチ依頼、OEM検討など"
+              ></textarea>
+            </div>
+            <button
+              type="button"
+              class="w-full py-4 bg-slate-950 text-white font-bold rounded-xl hover:bg-slate-800 transition-all flex items-center justify-center"
+            >
+              送信する
+              <span class="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-cyan-500 text-slate-950">→</span>
+            </button>
+          </form>
+          <div class="mt-8 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-sm text-slate-500">
+            <div class="flex items-center">
+              <span class="w-4 h-4 mr-2 rounded-full bg-green-500"></span> 日本円での取引対応
+            </div>
+            <div class="flex items-center">
+              <span class="w-4 h-4 mr-2 rounded-full bg-green-500"></span> 日本法人契約 準備中
+            </div>
+            <div class="flex items-center">
+              <span class="w-4 h-4 mr-2 rounded-full bg-green-500"></span> 日本語で完結
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-900 bg-slate-950">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <div class="flex items-center space-x-2 mb-4">
+            <div class="w-6 h-6 bg-cyan-500 rounded flex items-center justify-center">
+              <div class="w-3 h-3 bg-slate-950 rounded-sm"></div>
+            </div>
+            <span class="font-bold">Project Hub Shenzhen</span>
+          </div>
+          <p class="text-xs text-slate-500">© 2024 Project Hub Shenzhen. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6 text-slate-400">
+          <a href="#" class="hover:text-white transition-colors text-sm">会社概要</a>
+          <a href="#" class="hover:text-white transition-colors text-sm">プライバシーポリシー</a>
+          <a href="#" class="hover:text-white transition-colors text-sm text-cyan-500">X (Twitter)</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

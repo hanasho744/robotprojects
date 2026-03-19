@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PPT 生成ツール - 中国ロボット・AIハードウェア導入支援</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PptxGenJS/3.10.0/pptxgen.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+				font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				background: linear-gradient(135deg, #0f172a, #0d3b5c);
+				color: #e2e8f0;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem;
+			}
+			.card {
+				width: min(980px, 100%);
+				background: rgba(15, 23, 42, 0.95);
+				border: 1px solid rgba(148, 163, 184, 0.08);
+				border-radius: 12px;
+				padding: 2rem;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+			}
+			h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+			p { color: rgba(226,232,240,0.9); margin-bottom: 1rem; line-height: 1.6 }
+			button {
+				background: linear-gradient(90deg,#06b6d4,#38bdf8);
+				border: none; color: #07203a; padding: 12px 20px; border-radius: 999px; font-weight: 700; cursor:pointer;
+			}
+			.note { margin-top: 0.8rem; font-size: 0.95rem; color: rgba(226,232,240,0.8) }
+			.status { margin-top: 0.8rem; font-size: 0.95rem; display:none }
+			.gallery { display:flex; gap:8px; margin-top:1rem; flex-wrap:wrap }
+			.thumb { width: 160px; height: 100px; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,0.04) }
+			.caption { font-size:0.85rem; color:rgba(226,232,240,0.8); margin-top:0.5rem }
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<h1>PPT 生成ツール</h1>
+			<p>このページは、資料（PPTX）をワンクリックで生成します。サンプル画像をスライドに埋め込もうと試みます（CORS・環境に依存します）。</p>
+
+			<div>
+				<button id="generate">PPT をダウンロード</button>
+				<div id="status" class="status"></div>
+			</div>
+
+			<div class="note">生成に失敗する場合は、ローカルサーバー（<code>python3 -m http.server 8000</code>）で開いてみてください。画像埋め込みが失敗しても、テキストスライドは生成されます。</div>
+
+			<div class="gallery" aria-hidden="false">
+				<img class="thumb" src="images/robot1.svg" alt="Factory robots" />
+				<img class="thumb" src="images/robot2.svg" alt="Collaborative robot" />
+				<img class="thumb" src="images/robot3.svg" alt="Robot assembly" />
+				<img class="thumb" src="images/robot4.svg" alt="Service robot" />
+			</div>
+
+			<div class="caption">※ 画像はサンプル（Unsplash）です。自社の画像を使う場合は URL を差し替えてください。</div>
+		</div>
+
+		<script>
+			// Utility to show status
+			const statusEl = document.getElementById('status');
+			function setStatus(msg, isError = false) {
+				statusEl.style.display = 'block';
+				statusEl.textContent = msg;
+				statusEl.style.color = isError ? '#ff8383' : '#d1fae5';
+			}
+
+			function createSlide(pptx, title, bullets) {
+				const slide = pptx.addSlide();
+				slide.addText(title, { x: 0.5, y: 0.4, w: 9, h: 0.8, fontSize: 26, bold: true, color: '363636' });
+				if (Array.isArray(bullets)) {
+					slide.addText(bullets.map(b => '• ' + b).join('\n'), { x: 0.6, y: 1.5, w: 8.4, h: 4.5, fontSize: 18, color: '363636' });
+				}
+			}
+
+			const imageUrls = [
+				'images/robot1.svg',
+				'images/robot2.svg',
+				'images/robot3.svg',
+				'images/robot4.svg',
+				'images/robot5.svg',
+				'images/robot6.svg'
+			];
+
+			function addImageSlide(pptx, title, urls) {
+				const slide = pptx.addSlide();
+				slide.addText(title, { x: 0.5, y: 0.3, w: 9, h: 0.8, fontSize: 22, bold: true, color: '363636' });
+				const cols = Math.min(urls.length, 3);
+				const w = (9 - (cols - 1) * 0.2) / cols;
+				urls.slice(0, 3).forEach((u, i) => {
+					try {
+						slide.addImage({ path: u, x: 0.5 + i * (w + 0.2), y: 1.1, w: w, h: 4 });
+					} catch (e) {
+						console.warn('addImage error', e);
+					}
+				});
+			}
+
+			document.getElementById('generate').addEventListener('click', async () => {
+				if (typeof PptxGenJS === 'undefined') {
+					setStatus('PptxGenJS が読み込まれていません。インターネット接続を確認してください。', true);
+					return;
+				}
+
+				setStatus('PPT を生成中...（画像の埋め込みは環境により動作しない場合があります）');
+
+				try {
+					const pptx = new PptxGenJS();
+					pptx.layout = 'LAYOUT_WIDE';
+
+					createSlide(pptx, '中国ロボット・AIハードウェア導入支援サービス概要', [
+						'深セン現地ネットワークを活かした調査・提携・視察・OEM/ODM一気通貫支援',
+						'日本企業が中国ロボット・AIハードを事業に実装するための現地実行パートナー'
+					]);
+
+					createSlide(pptx, 'なぜ今、中国ロボットなのか', [
+						'ヒューマノイド、サービスロボット、AIハードウェアの進化が早い',
+						'日本企業単独では情報収集・評価・実装が追い切れない'
+					]);
+
+					createSlide(pptx, '日本企業が直面する課題', [
+						'情報が断片的で比較しにくい',
+						'有力企業に直接つながれない',
+						'導入後の品質・運用に不安'
+					]);
+
+					// Add images slide (best-effort)
+					addImageSlide(pptx, '導入・製造イメージ（サンプル）', imageUrls);
+
+					// Add remaining slides (shortened for demo)
+					createSlide(pptx, 'サービス全体像（支援フロー）', [
+						'情報収集 → 候補選定 → 面談設定 → 視察／評価 → 提携交渉 → PoC → 導入／OEM管理'
+					]);
+
+					createSlide(pptx, 'お問い合わせ', [
+						'香港法人（日本法人設立予定）', '日本語対応可・日本円取引対応'
+					]);
+
+					await pptx.writeFile({ fileName: '中国ロボット_AIハード_導入支援資料.pptx' });
+					setStatus('ダウンロードを開始しました。', false);
+				} catch (err) {
+					console.error(err);
+					setStatus('PPT生成中にエラーが発生しました: ' + (err?.message || err), true);
+				}
+			});
+		</script>
+	</body>
+</html>
