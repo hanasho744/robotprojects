@@ -114,7 +114,8 @@
 
 					createSlide(pptx, '中国ロボット・AIハードウェア導入支援サービス概要', [
 						'深セン現地ネットワークを活かした調査・提携・視察・OEM/ODM一気通貫支援',
-						'日本企業が中国ロボット・AIハードを事業に実装するための現地実行パートナー'
+						'日本企業が中国ロボット・AIハードを事業に実装するための現地実行パートナー',
+						'提供：robot agent（Shenzhen）'
 					]);
 
 					createSlide(pptx, 'なぜ今、中国ロボットなのか', [
@@ -138,6 +139,13 @@
 
 					createSlide(pptx, 'お問い合わせ', [
 						'香港法人（日本法人設立予定）', '日本語対応可・日本円取引対応'
+					]);
+
+					// Final branding / contact slide
+					createSlide(pptx, 'robot agent（ロボットエージェント）', [
+						'深セン拠点：現地実行パートナー',
+						'お問い合わせ：contact@example.com',
+						'Web：your-website.example'
 					]);
 
 					await pptx.writeFile({ fileName: '中国ロボット_AIハード_導入支援資料.pptx' });
