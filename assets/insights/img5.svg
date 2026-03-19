@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#07101a" rx="24" />
+  <g fill="#35d3ff" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">
+    <text x="60" y="120">人型ロボット30億台時代の議論</text>
+  </g>
+  <g fill="#bdefff" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    <text x="60" y="180">普及シナリオと事業化の障壁</text>
+  </g>
+</svg>

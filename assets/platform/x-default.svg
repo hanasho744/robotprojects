@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#022037"/>
+      <stop offset="1" stop-color="#043a5a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <text x="60" y="120" fill="#35d3ff" font-size="48" font-weight="700">X</text>
+  <text x="60" y="180" fill="#bdefff" font-size="22">公式アカウントの投稿</text>
+</svg>
